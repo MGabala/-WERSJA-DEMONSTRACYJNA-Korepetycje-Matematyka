@@ -14,6 +14,10 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//HttpLogging -> show logs in console
+app.UseHttpLogging();
+
 app.UseStaticFiles();
 
 app.UseRouting();

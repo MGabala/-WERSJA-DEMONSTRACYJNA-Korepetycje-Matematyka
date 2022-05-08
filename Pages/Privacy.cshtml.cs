@@ -14,6 +14,7 @@ namespace Korepetycje_Matematyka.Pages
 
         public void OnGet()
         {
+
         }
     }
 }
