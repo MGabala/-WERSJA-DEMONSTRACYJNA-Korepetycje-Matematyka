@@ -7,4 +7,12 @@
     <RootNamespace>Korepetycje_Matematyka</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\image-indexpage.jpeg" />
+  </ItemGroup>
+
 </Project>
