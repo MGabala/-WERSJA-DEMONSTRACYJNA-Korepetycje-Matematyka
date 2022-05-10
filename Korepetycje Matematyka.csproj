@@ -6,13 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Korepetycje_Matematyka</RootNamespace>
     <UserSecretsId>5068797d-f9bb-4129-96f9-75db1705099c</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\images\image-indexpage.jpeg" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
