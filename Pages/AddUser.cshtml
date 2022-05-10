@@ -1,0 +1,23 @@
+﻿@page "/adduser"
+@model Korepetycje_Matematyka.Pages.AddUserModel
+@{
+}
+<div class="row">
+  <div class="col-md-3">
+     <form method="post">
+         <div class="mb-3">
+         <label asp-for="NewUser.Login">Login</label>
+         <input asp-for="NewUser.Login" class="form-control"/>
+         </div>
+            <div class="mb-3">
+         <label asp-for="NewUser.Password">Hasło</label>
+         <input asp-for="NewUser.Password" class="form-control"/>
+         </div>
+             <div class="mb-3">
+         <label asp-for="NewUser.PhoneNumber">Numer Telefonu</label>
+         <input asp-for="NewUser.PhoneNumber" class="form-control"/>
+         </div>
+         <button class="btn btn-success">Dodaj konto</button>
+     </form>
+  </div>
+</div>

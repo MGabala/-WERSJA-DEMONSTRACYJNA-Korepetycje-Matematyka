@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {
-    public class LoginModel : PageModel
+    public class AddUserModel : PageModel
     {
-        [BindProperty]
-        public Account TryLogin { get; set; }
-        public void OnGet()
+        public Account NewUser { get; set; }
+         
+        public void OnPost()
         {
-        }
 
+        }
     }
 }

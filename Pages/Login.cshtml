@@ -3,7 +3,7 @@
 @{ ViewData["Title"] = "Login page";
 }
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-3">
      <form method="post">
          <div class="mb-3">
          <label asp-for="TryLogin.Login">Login</label>
@@ -13,6 +13,7 @@
          <label asp-for="TryLogin.Password">Password</label>
          <input asp-for="TryLogin.Password" class="form-control"/>
          </div>
+         <button class="btn btn-success">Zaloguj się</button>
      </form>
   </div>
 </div>
