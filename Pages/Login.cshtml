@@ -2,3 +2,17 @@
 @model Korepetycje_Matematyka.Pages.LoginModel
 @{ ViewData["Title"] = "Login page";
 }
+<div class="row">
+  <div class="col-md-6">
+     <form method="post">
+         <div class="mb-3">
+         <label asp-for="TryLogin.Login">Login</label>
+         <input asp-for="TryLogin.Login" class="form-control"/>
+         </div>
+            <div class="mb-3">
+         <label asp-for="TryLogin.Password">Password</label>
+         <input asp-for="TryLogin.Password" class="form-control"/>
+         </div>
+     </form>
+  </div>
+</div>
