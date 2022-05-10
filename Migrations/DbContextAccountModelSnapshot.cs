@@ -16,7 +16,7 @@ namespace Korepetycje_Matematyka.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
-            modelBuilder.Entity("Korepetycje_Matematyka.Entitites.EntitiyAccount", b =>
+            modelBuilder.Entity("Korepetycje_Matematyka.Data.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

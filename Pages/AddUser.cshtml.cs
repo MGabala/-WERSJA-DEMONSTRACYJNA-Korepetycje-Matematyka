@@ -8,7 +8,7 @@ namespace Korepetycje_Matematyka.Pages
     public class AddUserModel : PageModel
     {
         [BindProperty]
-        public DataAccount NewUser { get; set; }
+        public Account NewUser { get; set; }
         private readonly DbContextAccount _context;
         public AddUserModel(DbContextAccount context )
         {

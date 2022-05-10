@@ -6,7 +6,7 @@ namespace Korepetycje_Matematyka.Db
 {
     public class DbContextAccount : DbContext
     {
-        public DbSet<DataAccount> Accounts { get; set; } = null!;
+        public DbSet<Account> Accounts { get; set; } = null!;
         public DbContextAccount(DbContextOptions<DbContextAccount> options) : base(options)
         {
 

@@ -10,15 +10,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Korepetycje_Matematyka.Migrations
 {
     [DbContext(typeof(DbContextAccount))]
-    [Migration("20220510144739_UserAccountsInitialMigration")]
-    partial class UserAccountsInitialMigration
+    [Migration("20220510153257_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
-            modelBuilder.Entity("Korepetycje_Matematyka.Entitites.EntitiyAccount", b =>
+            modelBuilder.Entity("Korepetycje_Matematyka.Data.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -4,7 +4,7 @@
 
 namespace Korepetycje_Matematyka.Migrations
 {
-    public partial class UserAccountsInitialMigration : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

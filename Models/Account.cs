@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Korepetycje_Matematyka.Data
 {
-    public class DataAccount
+    public class Account
     {
         public int Id { get; set; } 
         [Required]
