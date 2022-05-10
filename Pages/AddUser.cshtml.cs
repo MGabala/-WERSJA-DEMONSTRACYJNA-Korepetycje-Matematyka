@@ -1,4 +1,5 @@
 using Korepetycje_Matematyka.Data;
+using Korepetycje_Matematyka.Db;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,10 +9,20 @@ namespace Korepetycje_Matematyka.Pages
     {
         [BindProperty]
         public DataAccount NewUser { get; set; }
+        private readonly DbContextAccount _context;
+        public AddUserModel(DbContextAccount context )
+        {
+            _context = context ?? throw new ArgumentNullException( nameof( context ) );
+        }
          
         public void OnPost()
         {
-            var newUser = NewUser.Login;
+            if (ModelState.IsValid)
+            {
+                _context.Add(NewUser);
+                _context.SaveChanges();
+            }
+            
         }
     }
 }
