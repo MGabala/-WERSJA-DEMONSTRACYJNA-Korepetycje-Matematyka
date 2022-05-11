@@ -6,11 +6,11 @@ namespace Korepetycje_Matematyka.Data
     public class Account
     {
         public int Id { get; set; } 
-        [Required]
+        [Required(ErrorMessage ="Podaj poprawny login.")]
         public string? Login { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Podaj poprawne hasło.")]
         public string? Password { get; set; }
-        [Phone]
+        [Required(ErrorMessage ="Podaj poprawny numer telefonu."),MinLength(9, ErrorMessage ="Numer telefonu ma 9 cyfr ;)"),MaxLength(9)]
         public string? PhoneNumber { get; set; }
     }
 }
