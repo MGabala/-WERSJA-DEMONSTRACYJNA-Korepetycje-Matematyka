@@ -1,6 +1,4 @@
 ﻿
-using System.ComponentModel.DataAnnotations;
-
 namespace Korepetycje_Matematyka.Data
 {
     public class Account

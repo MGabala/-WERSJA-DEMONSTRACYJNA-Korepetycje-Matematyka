@@ -1,7 +1,3 @@
-using Korepetycje_Matematyka.Data;
-using Korepetycje_Matematyka.Db;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {

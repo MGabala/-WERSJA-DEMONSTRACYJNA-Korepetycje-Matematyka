@@ -1,7 +1,4 @@
-﻿using Korepetycje_Matematyka.Data;
-using Korepetycje_Matematyka.Entitites;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Korepetycje_Matematyka.Db
 {
     public class DbContextAccount : DbContext
