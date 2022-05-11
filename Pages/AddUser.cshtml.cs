@@ -15,14 +15,15 @@ namespace Korepetycje_Matematyka.Pages
             _context = context ?? throw new ArgumentNullException( nameof( context ) );
         }
          
-        public void OnPost()
+        public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
                 _context.Add(NewUser);
                 _context.SaveChanges();
+               
             }
-            
+            return Page();
         }
     }
 }

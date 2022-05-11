@@ -9,15 +9,18 @@
          <div class="mb-3">
          <label asp-for="NewUser.Login">Login</label>
          <input asp-for="NewUser.Login" class="form-control"/>
+         <span asp-validation-for="NewUser.Login"></span>
          </div>
             <div class="mb-3">
          <label asp-for="NewUser.Password">Hasło</label>
          <input asp-for="NewUser.Password" class="form-control"/>
+          <span asp-validation-for="NewUser.Password"></span>
          </div>
              <div class="mb-3">
          <label asp-for="NewUser.PhoneNumber">Numer Telefonu</label>
          <input asp-for="NewUser.PhoneNumber" class="form-control"/>
-         </div>
+      <span asp-validation-for="NewUser.PhoneNumber"></span>    
+     </div>
          <button class="btn btn-success">Dodaj konto</button>
      </form>
   </div>
