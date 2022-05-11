@@ -13,6 +13,8 @@ namespace Korepetycje_Matematyka.Entitites
         public string? Password { get; set; }
         [Phone]
         public string? PhoneNumber { get; set; }
+        [MaxLength(250)]
+        public string? Desc { get; set; }
     }
 }
 

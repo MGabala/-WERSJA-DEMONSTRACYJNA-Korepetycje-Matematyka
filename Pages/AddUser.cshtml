@@ -21,6 +21,11 @@
          <input asp-for="NewUser.PhoneNumber" class="form-control"/>
       <span asp-validation-for="NewUser.PhoneNumber"></span>    
      </div>
+     <div class="mb-3">
+         <label asp-for="NewUser.Desc">Opis</label>
+         <input asp-for="NewUser.Desc" class="form-control"/>
+      <span asp-validation-for="NewUser.Desc"></span>    
+     </div>
          <button class="btn btn-success">Dodaj konto</button>
      </form>
   </div>
