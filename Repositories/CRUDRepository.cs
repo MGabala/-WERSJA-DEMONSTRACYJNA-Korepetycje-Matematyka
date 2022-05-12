@@ -1,4 +1,4 @@
-﻿namespace Korepetycje_Matematyka
+﻿namespace Korepetycje_Matematyka.Repositories
 {
     public class CRUDRepository : ICRUDRepository
     {
@@ -17,9 +17,9 @@
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Account>> GetAllAsync()
+        public async Task<IEnumerable<Account>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _contextAccount.Accounts.OrderBy(x => x.Id).ToListAsync();
         }
 
         public Task<Account?> GetOneAsync(int phoneNumber)

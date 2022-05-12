@@ -1,8 +1,10 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DbContextAccount>(db_config => db_config.UseSqlite(builder.Configuration["ConnectionStrings:AccountsDB"]));
+builder.Services.AddScoped<ICRUDRepository, CRUDRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,4 +1,4 @@
-﻿namespace Korepetycje_Matematyka
+﻿namespace Korepetycje_Matematyka.Repositories
 {
     public interface ICRUDRepository
     {
