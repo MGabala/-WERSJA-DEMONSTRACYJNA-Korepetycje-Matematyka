@@ -21,7 +21,8 @@
             <td>@item.Password</td>
             <td>@item.Desc</td>
             <td>@item.PhoneNumber</td>
-            <td><a asp-page="Edit" asp-route-id="@item.Id">Edit</a></td>
+             <td><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="@item.Id">Edit</a>
+             </td>
             </tr>
         }
     </tbody>
