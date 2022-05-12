@@ -2,6 +2,11 @@
 {
     public class CRUDRepository : ICRUDRepository
     {
+        private DbContextAccount _contextAccount;
+        public CRUDRepository(DbContextAccount contextAccount)
+        {
+           _contextAccount = contextAccount ?? throw new ArgumentNullException(nameof(contextAccount));
+        }
         public Task CreateAsync(Account account)
         {
             throw new NotImplementedException();
