@@ -34,13 +34,13 @@
             _contextAccount.Entry(account).State = EntityState.Modified;
             _contextAccount.SaveChanges();
         }
-        public Task<bool> SaveChangesAsync()
+        public async Task<bool> SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            return (await _contextAccount.SaveChangesAsync() >= 0);
         }
-        public Task<bool> UserExistsAsync(int id)
+        public async Task<bool> UserExistsAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _contextAccount.Accounts.AnyAsync(x=>x.Id==id);
         }
     }
 }

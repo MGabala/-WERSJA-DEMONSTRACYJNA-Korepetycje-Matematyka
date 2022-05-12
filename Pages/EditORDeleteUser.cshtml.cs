@@ -19,13 +19,18 @@ namespace Korepetycje_Matematyka.Pages
             EditUser = await repo.GetOneAsync(Id);
             return Page();
         }
-        public IActionResult OnPost()
+        public IActionResult OnPostEdit()
         {
             if (ModelState.IsValid)
             {
                 EditUser.Id = Id;
                 repo.UpdateAsync(EditUser);
             }
+            return RedirectToPage("allusers");
+        }
+        public IActionResult OnPostDelete()
+        {
+            repo.DeleteAsync(Id);
             return RedirectToPage("allusers");
         }
     }

@@ -27,8 +27,9 @@
          <input asp-for="EditUser.Desc" class="form-control"/>
       <span asp-validation-for="EditUser.Desc"></span>    
      </div>
-         <button class="btn btn-success">Dodaj konto</button>
-          <button class="btn btn-success">Aktualizuj konto</button>
+         <button asp-page-handler="edit" class="btn btn-success">Aktualizuj konto</button>
+         <button asp-page-handler="delete" class="btn btn-danger" float-end>Usuń konto</button>
+          
      </form>
   </div>
 </div>
