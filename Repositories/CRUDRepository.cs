@@ -13,9 +13,11 @@
             await _contextAccount.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+          var delete = await _contextAccount.Accounts.FirstOrDefaultAsync(x=>x.Id == id);
+         _contextAccount.Accounts.Remove(delete);
+           _contextAccount.SaveChanges();
         }
 
         public async Task<IEnumerable<Account>> GetAllAsync()
