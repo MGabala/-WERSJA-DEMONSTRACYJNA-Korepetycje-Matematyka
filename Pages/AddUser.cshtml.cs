@@ -3,21 +3,20 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class AddUserModel : PageModel
     {
+        private ICRUDRepository repo;
+
         [BindProperty]
         public Account NewUser { get; set; }
-        private readonly DbContextAccount _context;
-        public AddUserModel(DbContextAccount context )
+        public AddUserModel(ICRUDRepository repository)
         {
-            _context = context ?? throw new ArgumentNullException( nameof( context ) );
+            this.repo = repository;
         }
-         
+
         public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                _context.Add(NewUser);
-                _context.SaveChanges();
-               
+                repo.CreateAsync(NewUser);
             }
             return Page();
         }

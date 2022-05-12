@@ -7,9 +7,10 @@
         {
            _contextAccount = contextAccount ?? throw new ArgumentNullException(nameof(contextAccount));
         }
-        public Task CreateAsync(Account account)
+        public async Task CreateAsync(Account account)
         {
-            throw new NotImplementedException();
+           await _contextAccount.Accounts.AddAsync(account);
+            await _contextAccount.SaveChangesAsync();
         }
 
         public Task DeleteAsync(int phoneNumber)
