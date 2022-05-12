@@ -13,7 +13,7 @@
             await _contextAccount.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int phoneNumber)
+        public Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -23,9 +23,9 @@
             return await _contextAccount.Accounts.OrderBy(x => x.Id).ToListAsync();
         }
 
-        public Task<Account?> GetOneAsync(int phoneNumber)
+        public async Task<Account?> GetOneAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _contextAccount.Accounts.FirstOrDefaultAsync(x=>x.Id==id);
         }
 
         public Task<bool> SaveChangesAsync()
@@ -33,7 +33,7 @@
             throw new NotImplementedException();
         }
 
-        public Task<bool> UserExistsAsync(int phoneNumber)
+        public Task<bool> UserExistsAsync(int id)
         {
             throw new NotImplementedException();
         }

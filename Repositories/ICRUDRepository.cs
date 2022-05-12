@@ -3,10 +3,10 @@
     public interface ICRUDRepository
     {
         public Task<IEnumerable<Account>> GetAllAsync();
-        public Task<Account?> GetOneAsync(int phoneNumber);
-        Task<bool> UserExistsAsync(int phoneNumber);
+        public Task<Account?> GetOneAsync(int id);
+        Task<bool> UserExistsAsync(int id);
         Task<bool> SaveChangesAsync();
-        Task DeleteAsync(int phoneNumber);
+        Task DeleteAsync(int id);
         Task CreateAsync(Account account);
     }
 }

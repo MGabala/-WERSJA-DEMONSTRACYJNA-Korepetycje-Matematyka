@@ -18,7 +18,7 @@ namespace Korepetycje_Matematyka.Pages
             {
                 repo.CreateAsync(NewUser);
             }
-            return Page();
+            return RedirectToPage("allusers");
         }
     }
 }
