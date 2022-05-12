@@ -1,4 +1,34 @@
-﻿@page
+﻿@page "/edit/{id:int}"
 @model Korepetycje_Matematyka.Pages.EditORDeleteUserModel
 @{
 }
+<h1>Edit Page</h1><hr /><hr />
+<div class="row">
+  <div class="col-md-3">
+     <form method="post">
+         <div asp-validation-summary="All"></div>
+         <div class="mb-3">
+         <label asp-for="EditUser.Login">Login</label>
+         <input asp-for="EditUser.Login" class="form-control"/>
+         <span asp-validation-for="EditUser.Login"></span>
+         </div>
+            <div class="mb-3">
+         <label asp-for="EditUser.Password">Hasło</label>
+         <input asp-for="EditUser.Password" class="form-control"/>
+          <span asp-validation-for="EditUser.Password"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="EditUser.PhoneNumber">Numer Telefonu</label>
+         <input asp-for="EditUser.PhoneNumber" class="form-control"/>
+      <span asp-validation-for="EditUser.PhoneNumber"></span>    
+     </div>
+     <div class="mb-3">
+         <label asp-for="EditUser.Desc">Opis</label>
+         <input asp-for="EditUser.Desc" class="form-control"/>
+      <span asp-validation-for="EditUser.Desc"></span>    
+     </div>
+         <button class="btn btn-success">Dodaj konto</button>
+          <button class="btn btn-success">Aktualizuj konto</button>
+     </form>
+  </div>
+</div>

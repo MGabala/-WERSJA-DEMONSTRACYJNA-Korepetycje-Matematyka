@@ -29,12 +29,15 @@
         {
             return await _contextAccount.Accounts.FirstOrDefaultAsync(x=>x.Id==id);
         }
-
+        public async Task UpdateAsync(Account account)
+        {
+            _contextAccount.Entry(account).State = EntityState.Modified;
+            _contextAccount.SaveChanges();
+        }
         public Task<bool> SaveChangesAsync()
         {
             throw new NotImplementedException();
         }
-
         public Task<bool> UserExistsAsync(int id)
         {
             throw new NotImplementedException();
