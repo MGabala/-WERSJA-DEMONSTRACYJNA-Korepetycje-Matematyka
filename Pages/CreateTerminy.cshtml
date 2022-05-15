@@ -1,5 +1,18 @@
-﻿@page
+﻿@page "/create"
 @model Korepetycje_Matematyka.Pages.CreateTerminyModel
 @{
 }
 <h1>Stwórz terminy</h1><hr /><hr />
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Poniedziałek</a></center></th>
+            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Wtorek</a></center></th>
+            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Środa</a></center></th>
+            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Czwartek</a></center></th>
+            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Piątek</a></center></th>
+             <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Sobota</a></center></th>
+              <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Niedziela</a></center></th>
+        </tr>
+    </thead></table>
