@@ -1,33 +1,51 @@
-﻿@page "/create"
+﻿@page "/create/{id:int}"
 @model Korepetycje_Matematyka.Pages.CreateTerminyModel
 @{
 }
 <h1>Stwórz terminy</h1><hr /><hr />
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Poniedziałek</a></center></th>
-            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Wtorek</a></center></th>
-            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Środa</a></center></th>
-            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Czwartek</a></center></th>
-            <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Piątek</a></center></th>
-             <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Sobota</a></center></th>
-              <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Niedziela</a></center></th>
-        </tr>
-    </thead>
-    <tbody>
-         @foreach(var item in Model.Terminy)
-        {
-            <tr>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Poniedziałek</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Wtorek</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Środa</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Czwartek</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Piątek</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Sobota</button></td>
-            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Niedziela</button></td>
-           
-            </tr>
-        }
-    </tbody></table>
+<div class="row">
+  <div class="col-md-3">
+     <form method="post">
+         <div asp-validation-summary="All"></div>
+         <div class="mb-3">
+         <label asp-for="Terminy.Poniedziałek">Termin w poniedziałek </label>
+         <input asp-for="Terminy.Poniedziałek" class="form-control"/>
+         <span asp-validation-for="Terminy.Poniedziałek"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Wtorek">Termin we wtorek</label>
+         <input asp-for="Terminy.Wtorek" class="form-control"/>
+         <span asp-validation-for="Terminy.Wtorek"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Środa">Termin w środę</label>
+         <input asp-for="Terminy.Środa" class="form-control"/>
+         <span asp-validation-for="Terminy.Środa"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Czwartek">Termin w czwartek</label>
+         <input asp-for="Terminy.Czwartek" class="form-control"/>
+         <span asp-validation-for="Terminy.Czwartek"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Piątek">Termin w piątek</label>
+         <input asp-for="Terminy.Piątek" class="form-control"/>
+         <span asp-validation-for="Terminy.Piątek"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Sobota">Termin w sobotę</label>
+         <input asp-for="Terminy.Sobota" class="form-control"/>
+         <span asp-validation-for="Terminy.Sobota"></span>
+         </div>
+             <div class="mb-3">
+         <label asp-for="Terminy.Niedziela">Termin w niedzielę</label>
+         <input asp-for="Terminy.Niedziela" class="form-control"/>
+         <span asp-validation-for="Terminy.Niedziela"></span>
+         </div>
+
+         <button asp-page-handler="edit" class="btn btn-success">Aktualizuj konto</button>
+     </form>
+  </div>
+</div>
+

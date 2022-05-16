@@ -6,17 +6,27 @@ namespace Korepetycje_Matematyka.Pages
     public class CreateTerminyModel : PageModel
     {
         private ITerminyRepository repo;
-        public IEnumerable<Terminy> Terminy { get; set; }
-
+        [FromRoute]
+        public int Id { get; set; }
+        [BindProperty]
+        public Terminy Terminy { get; set; }
         public CreateTerminyModel(ITerminyRepository repository)
         {
             this.repo = repository;
         }
-        public async Task OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            //Accounts = await AccountsRepo.GetAllAsync();
-            Terminy = await repo.GetAllTerminyAsync();
+            Terminy = await repo.GetOneAsync(Id);
+            return Page();
+        }
+        public IActionResult OnPostEdit()
+        {
+            if (ModelState.IsValid)
+            {
+                Terminy.Id = Id;
+                repo.UpdateAsync(Terminy);
+            }
+            return RedirectToPage("terminy");
         }
     }
 }
-

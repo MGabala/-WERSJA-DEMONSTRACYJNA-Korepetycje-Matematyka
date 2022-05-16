@@ -20,7 +20,7 @@
          @foreach(var item in Model.Terminy)
         {
             <tr>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Poniedziałek</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Poniedziałek</button><br /><center><a class="btn btn-success" asp-page="CreateTerminy" asp-route-id="@item.Id">Edit</a></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Wtorek</button></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Środa</button></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Czwartek</button></center></td>

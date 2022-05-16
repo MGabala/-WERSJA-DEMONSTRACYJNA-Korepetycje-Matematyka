@@ -2,10 +2,10 @@
 {
     public class TerminyRepository : ITerminyRepository
     {
-        private DbContextAccount _contextAccount;
-        public TerminyRepository(DbContextAccount contextAccount)
+        private DbContextAccount _contextTerminy;
+        public TerminyRepository(DbContextAccount contextTerminy)
         {
-            _contextAccount = contextAccount ?? throw new ArgumentNullException(nameof(contextAccount));
+            _contextTerminy = contextTerminy ?? throw new ArgumentNullException(nameof(_contextTerminy));
         }
         public Task CreateAsync(Terminy account)
         {
@@ -19,22 +19,23 @@
 
         public async Task<IEnumerable<Terminy>> GetAllTerminyAsync()
         {
-            return await _contextAccount.Terminy.OrderBy(x => x.Id).ToListAsync();
+            return await _contextTerminy.Terminy.OrderBy(x => x.Id).ToListAsync();
         }
 
-        public Task<Terminy?> GetOneAsync(int id)
+        public async Task<Terminy?> GetOneAsync(int id)
         {
-            throw new NotImplementedException();
+           return await _contextTerminy.Terminy.FirstOrDefaultAsync(x=>x.Id == id);
         }
 
-        public Task<bool> SaveChangesAsync()
+        public async Task<bool> SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            return (await _contextTerminy.SaveChangesAsync() >= 0);
         }
 
-        public Task UpdateAsync(Terminy account)
+        public async Task UpdateAsync(Terminy account)
         {
-            throw new NotImplementedException();
+            _contextTerminy.Entry(account).State = EntityState.Modified;
+            _contextTerminy.SaveChanges();
         }
 
         public Task<bool> UserExistsAsync(int id)
