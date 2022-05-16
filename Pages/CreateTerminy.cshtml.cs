@@ -5,16 +5,18 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class CreateTerminyModel : PageModel
     {
-        private ICRUDRepository repo;
-        [FromRoute]
-        public int Id { get; set; }
-        public Terminy Terminy { get; set; }
-        public CreateTerminyModel(ICRUDRepository repository)
+        private ITerminyRepository repo;
+        public IEnumerable<Terminy> Terminy { get; set; }
+
+        public CreateTerminyModel(ITerminyRepository repository)
         {
-            this.repo = repository ?? throw new ArgumentNullException(nameof(repository));
+            this.repo = repository;
         }
-        public void OnGet()
+        public async Task OnGet()
         {
+            //Accounts = await AccountsRepo.GetAllAsync();
+            Terminy = await repo.GetAllTerminyAsync();
         }
     }
 }
+

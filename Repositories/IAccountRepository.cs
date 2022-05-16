@@ -1,6 +1,6 @@
 ﻿namespace Korepetycje_Matematyka.Repositories
 {
-    public interface ICRUDRepository
+    public interface IAccountRepository
     {
         public Task<IEnumerable<Account>> GetAllAsync();
         public Task<Account?> GetOneAsync(int id);

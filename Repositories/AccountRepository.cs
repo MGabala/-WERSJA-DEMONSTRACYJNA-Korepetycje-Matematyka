@@ -1,9 +1,9 @@
 ﻿namespace Korepetycje_Matematyka.Repositories
 {
-    public class CRUDRepository : ICRUDRepository
+    public class AccountRepository : IAccountRepository
     {
         private DbContextAccount _contextAccount;
-        public CRUDRepository(DbContextAccount contextAccount)
+        public AccountRepository(DbContextAccount contextAccount)
         {
            _contextAccount = contextAccount ?? throw new ArgumentNullException(nameof(contextAccount));
         }

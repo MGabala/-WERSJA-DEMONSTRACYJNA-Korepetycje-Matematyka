@@ -5,8 +5,18 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class TerminyModel : PageModel
     {
-        public void OnGet()
+        private ITerminyRepository repo;
+        public IEnumerable<Terminy> Terminy { get; set; }
+
+        public TerminyModel(ITerminyRepository repository)
         {
+            this.repo = repository;
         }
+        public async Task OnGet()
+        {
+            //Accounts = await AccountsRepo.GetAllAsync();
+            Terminy = await repo.GetAllTerminyAsync();
+        }
+     
     }
 }

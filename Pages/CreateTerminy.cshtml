@@ -15,4 +15,19 @@
              <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Sobota</a></center></th>
               <th><center><a class="btn btn-success" asp-page="EditORDeleteUser" asp-route-id="">Niedziela</a></center></th>
         </tr>
-    </thead></table>
+    </thead>
+    <tbody>
+         @foreach(var item in Model.Terminy)
+        {
+            <tr>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Poniedziałek</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Wtorek</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Środa</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Czwartek</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Piątek</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Sobota</button></td>
+            <td> <button asp-page-handler="edit" class="btn btn-success">@item.Niedziela</button></td>
+           
+            </tr>
+        }
+    </tbody></table>

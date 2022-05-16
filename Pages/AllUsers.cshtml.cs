@@ -5,10 +5,10 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class AllUsersModel : PageModel
     {
-        private ICRUDRepository AccountsRepo;
+        private IAccountRepository AccountsRepo;
         public IEnumerable<Account> Accounts { get; set; }
 
-        public AllUsersModel(ICRUDRepository repository)
+        public AllUsersModel(IAccountRepository repository)
         {
             this.AccountsRepo = repository;
         }

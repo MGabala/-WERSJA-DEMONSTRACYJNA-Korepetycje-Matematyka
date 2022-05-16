@@ -3,11 +3,11 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class AddUserModel : PageModel
     {
-        private ICRUDRepository repo;
+        private IAccountRepository repo;
 
         [BindProperty]
         public Account NewUser { get; set; }
-        public AddUserModel(ICRUDRepository repository)
+        public AddUserModel(IAccountRepository repository)
         {
             this.repo = repository;
         }

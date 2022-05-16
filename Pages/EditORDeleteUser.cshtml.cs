@@ -5,12 +5,12 @@ namespace Korepetycje_Matematyka.Pages
 {
     public class EditORDeleteUserModel : PageModel
     {
-        private ICRUDRepository repo;
+        private IAccountRepository repo;
         [FromRoute]
         public int Id { get; set; }
         [BindProperty]
         public Account EditUser { get; set; }
-        public EditORDeleteUserModel(ICRUDRepository repository)
+        public EditORDeleteUserModel(IAccountRepository repository)
         {
             this.repo = repository;
         }
