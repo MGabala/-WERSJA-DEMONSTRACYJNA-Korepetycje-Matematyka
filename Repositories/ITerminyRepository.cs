@@ -7,7 +7,7 @@
         public Task<bool> UserExistsAsync(int id);
         public Task<bool> SaveChangesAsync();
         public Task DeleteAsync(int id);
-        public Task CreateAsync(Terminy account);
-        public Task UpdateAsync(Terminy account);
+        public Task CreateAsync(Terminy termin);
+        public Task UpdateAsync(Terminy termin);
     }
 }

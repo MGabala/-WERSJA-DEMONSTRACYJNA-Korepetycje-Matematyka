@@ -25,6 +25,7 @@ namespace Korepetycje_Matematyka.Pages
             {
                 Terminy.Id = Id;
                 repo.UpdateAsync(Terminy);
+                repo.SaveChangesAsync();
             }
             return RedirectToPage("terminy");
         }

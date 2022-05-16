@@ -7,7 +7,7 @@
         {
             _contextTerminy = contextTerminy ?? throw new ArgumentNullException(nameof(_contextTerminy));
         }
-        public Task CreateAsync(Terminy account)
+        public Task CreateAsync(Terminy termin)
         {
             throw new NotImplementedException();
         }
@@ -32,9 +32,9 @@
             return (await _contextTerminy.SaveChangesAsync() >= 0);
         }
 
-        public async Task UpdateAsync(Terminy account)
+        public async Task UpdateAsync(Terminy termin)
         {
-            _contextTerminy.Entry(account).State = EntityState.Modified;
+            _contextTerminy.Entry(termin).State = EntityState.Modified;
             _contextTerminy.SaveChanges();
         }
 
