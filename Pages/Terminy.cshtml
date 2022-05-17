@@ -7,27 +7,35 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th><center>Poniedziałek </center></th>
-            <th><center>Wtorek </center></th>
-            <th><center>Środa </center></th>
-            <th><center>Czwartek </center></th>
-            <th><center>Piątek </center></th>
-             <th><center>Sobota </center></th>
-              <th><center>Niedziela </center></th>
+             <th><center>Dzień Tygodnia</center></th>
+           <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>  <th>
+               <center>Godzina </center></th>
+          <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>  
+           <th><center>Godzina </center></th>
+            <th><center>Godzina </center></th>
+             <th><center>Godzina </center></th>
+              <th><center>Godzina </center></th>
+               <th><center>Godzina </center></th>
         </tr>
     </thead>
     <tbody>
          @foreach(var item in Model.Terminy)
         {
             <tr>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Poniedziałek</button><br /><center><a class="btn btn-success" asp-page="CreateTerminy" asp-route-id="@item.Id">Edit</a></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Wtorek</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Środa</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Czwartek</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Piątek</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Sobota</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Niedziela</button></center></td>
-           
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /><center><a class="btn btn-success" asp-page="CreateTerminy" asp-route-id="@item.Id">Edit</a></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina1</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina2</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina3</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina4</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina5</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina6</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina7</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina8</button></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina9</button></center></td>
             </tr>
         }
+        
     </tbody></table>

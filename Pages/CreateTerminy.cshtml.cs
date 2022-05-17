@@ -10,6 +10,7 @@ namespace Korepetycje_Matematyka.Pages
         public int Id { get; set; }
         [BindProperty]
         public Terminy Terminy { get; set; }
+      
         public CreateTerminyModel(ITerminyRepository repository)
         {
             this.repo = repository;

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Korepetycje_Matematyka.Migrations
 {
     [DbContext(typeof(DbContextAccount))]
-    [Migration("20220515104106_Terminy")]
-    partial class Terminy
+    [Migration("20220516181758_Test")]
+    partial class Test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,31 +52,47 @@ namespace Korepetycje_Matematyka.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Czwartek")
+                    b.Property<string>("Dzień_Tygodnia")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Niedziela")
+                    b.Property<string>("Godzina")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Piątek")
+                    b.Property<string>("Godzina1")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Poniedziałek")
+                    b.Property<string>("Godzina2")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Sobota")
+                    b.Property<string>("Godzina3")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Wtorek")
+                    b.Property<string>("Godzina4")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Środa")
+                    b.Property<string>("Godzina5")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Godzina6")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Godzina7")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Godzina8")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Godzina9")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
