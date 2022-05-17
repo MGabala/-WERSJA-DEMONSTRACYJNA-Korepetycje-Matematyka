@@ -14,6 +14,7 @@ namespace Korepetycje_Matematyka.Pages
         {
             this.AccountsRepo = repository;
         }
+        
         public async Task OnGet()
         {
             Accounts = await AccountsRepo.GetAllAsync();
