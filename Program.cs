@@ -8,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DbContextAccount>(db_config => db_config.UseSqlite(builder.Configuration["ConnectionStrings:AccountsDB"]));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DbContextAccount>();
+builder.Services.Configure<IdentityOptions>(config => {
+    config.Password.RequiredLength = 6;
+    config.Password.RequireNonAlphanumeric = false;
+    config.Password.RequireLowercase = false;
+    config.Password.RequireUppercase = false;
+    config.Password.RequireDigit = false;
+});
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITerminyRepository, TerminyRepository>();
 
@@ -31,7 +38,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseAuthentication();
+
 app.MapRazorPages();
 
 app.Run();
