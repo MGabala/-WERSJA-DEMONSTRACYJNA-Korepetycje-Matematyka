@@ -4,6 +4,7 @@
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required]
         public string Dzień_Tygodnia { get; set; }
         public string Godzina { get; set; }
         public string Godzina1 { get; set; }
