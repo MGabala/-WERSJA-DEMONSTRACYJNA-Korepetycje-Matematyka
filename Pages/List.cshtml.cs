@@ -16,5 +16,14 @@ namespace Korepetycje_Matematyka.Pages
         {
             Users = UserManager.Users;
         }
+        public async Task<IActionResult> OnPostAsync(string id)
+        {
+            IdentityUser user = await UserManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                await UserManager.DeleteAsync(user);
+            }
+            return RedirectToPage();
+        }
     }
 }
