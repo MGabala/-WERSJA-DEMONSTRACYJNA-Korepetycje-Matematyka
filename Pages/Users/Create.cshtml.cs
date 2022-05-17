@@ -14,8 +14,10 @@ namespace Korepetycje_Matematyka.Pages
         [BindProperty]
         public string UserName { get; set; } = string.Empty;
         [BindProperty]
-        [EmailAddress]
+      
         public string Email { get; set; } = string.Empty;
+        [BindProperty]
+        public string PhoneNumber { get; set; } = string.Empty;
         [BindProperty]
         public string Password { get; set; } = string.Empty;
         public async Task<IActionResult> OnPostAsync()
@@ -23,7 +25,7 @@ namespace Korepetycje_Matematyka.Pages
             if (ModelState.IsValid)
             {
                 IdentityUser user =
-                    new IdentityUser { UserName = UserName, Email = Email };
+                    new IdentityUser { UserName = UserName, Email = Email, PhoneNumber = PhoneNumber };
                 IdentityResult result =
                     await UserManager.CreateAsync(user, Password);
                 if (result.Succeeded)

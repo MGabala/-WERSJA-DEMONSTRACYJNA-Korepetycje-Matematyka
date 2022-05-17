@@ -16,14 +16,15 @@ namespace Korepetycje_Matematyka.Pages
         [BindProperty]
         public string UserName { get; set; } = string.Empty;
         [BindProperty]
-        [EmailAddress]
         public string Email { get; set; } = string.Empty;
+        [BindProperty]
+        public string PhoneNumber { get; set; } = string.Empty;
         [BindProperty]
         public string? Password { get; set; }
         public async Task OnGetAsync(string id)
         {
             IdentityUser user = await UserManager.FindByIdAsync(id);
-            Id = user.Id; UserName = user.UserName; Email = user.Email;
+            Id = user.Id; UserName = user.UserName; Email = user.Email; PhoneNumber = user.PhoneNumber;
         }
         public async Task<IActionResult> OnPostAsync()
         {
