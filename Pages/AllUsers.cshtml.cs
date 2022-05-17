@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {
+    [Authorize]
     public class AllUsersModel : PageModel
     {
         private IAccountRepository AccountsRepo;
