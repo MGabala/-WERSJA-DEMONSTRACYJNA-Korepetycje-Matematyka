@@ -1,9 +1,7 @@
-﻿@page "/terminy"
-@model Korepetycje_Matematyka.Pages.TerminyModel
+﻿@page "/adminterminy"
+@model Korepetycje_Matematyka.Pages.ADMIN_ListaTerminówModel
 @{
 }
-<h1>Dostępne terminy korepetycji</h1><hr /><hr />
-
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -24,7 +22,7 @@
          @foreach(var item in Model.Terminy)
         {
             <tr>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /></center></td>
+            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /><center><a class="btn btn-success" asp-page="CreateTerminy" asp-route-id="@item.Id">Edit</a></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina</button></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina1</button></center></td>
             <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina2</button></center></td>
