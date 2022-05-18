@@ -1,4 +1,5 @@
 
+using Korepetycje_Matematyka.Models;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,17 +30,15 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
+
 //HttpLogging -> show logs in console
 app.UseHttpLogging();
 
 app.UseStaticFiles();
 
 app.UseRouting();
-
-
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapRazorPages();
-
+IdentitySeedData.CreateAdminAccount(app.Services, app.Configuration);
 app.Run();
