@@ -1,5 +1,6 @@
 
 using Korepetycje_Matematyka.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,12 @@ builder.Services.Configure<IdentityOptions>(config => {
 });
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITerminyRepository, TerminyRepository>();
-
+builder.Services.Configure<CookieAuthenticationOptions>(
+       IdentityConstants.ApplicationScheme,
+    config => {
+        config.LoginPath = "/denied";
+        config.AccessDeniedPath = "/denied";
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,5 +46,5 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapRazorPages();
-IdentitySeedData.CreateAdminAccount(app.Services, app.Configuration);
+//IdentitySeedData.CreateAdminAccount(app.Services, app.Configuration);
 app.Run();

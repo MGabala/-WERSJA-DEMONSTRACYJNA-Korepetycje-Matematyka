@@ -1,10 +1,10 @@
-﻿@page
+﻿@page "/denied"
 @model Korepetycje_Matematyka.Pages.Account.AccessDeniedModel
 @{
 }
-<h4 class="bg-danger text-white text-center p-2">Access Denied</h4>
+<h4 class="bg-danger text-white text-center p-2">Brak dostępu</h4>
 <div class="m-2">
-    <h6>You are not authorized for this URL</h6>
-    <a class="btn btn-outline-danger" href="/">OK</a>
-    <a class="btn btn-outline-secondary" asp-page="Logout">Logout</a>
+    <h6>Brak dostępu</h6>
+    <a class="btn btn-outline-danger" asp-page="Logout">OK</a>
+    <a class="btn btn-outline-secondary" asp-page="Logout">Wyloguj</a>
 </div>
