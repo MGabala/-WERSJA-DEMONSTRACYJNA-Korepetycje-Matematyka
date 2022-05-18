@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {
+    [Authorize(Roles = "Admins")]
     public class ADMIN_ListaTerminówModel : PageModel
     {
         private ITerminyRepository repo;
