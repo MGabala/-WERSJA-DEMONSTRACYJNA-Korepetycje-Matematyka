@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {
+    [Authorize(Roles = "Admins")]
     public class CreateTerminyModel : PageModel
     {
         private ITerminyRepository repo;
@@ -28,7 +30,7 @@ namespace Korepetycje_Matematyka.Pages
                 repo.UpdateAsync(Terminy);
                 repo.SaveChangesAsync();
             }
-            return RedirectToPage("terminy");
+            return RedirectToPage("ADMIN_ListaTerminów");
         }
     }
 }

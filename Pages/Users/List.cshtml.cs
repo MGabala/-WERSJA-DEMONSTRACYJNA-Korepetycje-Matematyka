@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Admins")]
     public class ListModel : PageModel
     {
         public UserManager<IdentityUser> UserManager;

@@ -21,9 +21,9 @@ builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITerminyRepository, TerminyRepository>();
 builder.Services.Configure<CookieAuthenticationOptions>(
        IdentityConstants.ApplicationScheme,
-    config => {
-        config.LoginPath = "/denied";
-        config.AccessDeniedPath = "/denied";
+    opts => {
+        opts.LoginPath = "/";
+        opts.AccessDeniedPath = "/";
     });
 var app = builder.Build();
 

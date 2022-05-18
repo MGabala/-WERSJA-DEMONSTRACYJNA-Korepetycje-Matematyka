@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace Korepetycje_Matematyka.Pages
 {
     [Authorize(Roles = "User")]
+
     public class TerminyModel : PageModel
     {
         private ITerminyRepository repo;

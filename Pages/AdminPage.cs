@@ -2,7 +2,7 @@
 
 namespace Korepetycje_Matematyka.Pages
 {
-    //[Authorize(Roles = "Admins")]
+    [Authorize(Roles = "Admins")]
     public class AdminPage : PageModel
     {
     }

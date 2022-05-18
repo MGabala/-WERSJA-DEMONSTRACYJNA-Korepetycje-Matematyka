@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Korepetycje_Matematyka.Pages.Account
 {
+    [Authorize(Roles = "Admins")]
     public class DetailsModel : PageModel
     {
         private UserManager<IdentityUser> userManager;
