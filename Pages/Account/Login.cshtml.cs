@@ -26,7 +26,7 @@ namespace Korepetycje_Matematyka.Pages.Account
                         false, false);
                 if (result.Succeeded)
                 {
-                    return Redirect(ReturnUrl ?? "/");
+                    return Redirect(ReturnUrl ?? "/terminy");
                 }
                 ModelState.AddModelError("", "Invalid username or password");
             }
