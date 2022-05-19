@@ -1,28 +1,36 @@
 ﻿
-using System;
-
 namespace CALENDAR_INTEGRATION // Note: actual namespace depends on the project name.
 {
-    internal class Program
+    internal class APIIntegration
     {
-
-        const string ApiKey_ = "AIzaSyAxriXYldEFvas2zCfdUgXzZCpohez2xd4";
-        const string CalendarId = "l8nhrpi19ggdojn97e0o1s6npc@group.calendar.google.com";
         static async Task Main(string[] args)
         {
-            var service = new Google.Apis.Calendar.v3.CalendarService(new Google.Apis.Services.BaseClientService.Initializer()
+            using IHost host = CreateHostBuilder(args).Build();
+            var serviceProvider = host.Services;
+            try
             {
-                ApiKey = ApiKey_,
-                ApplicationName = "Test"
-            });
-            var request = service.Events.List(CalendarId);
-            request.Fields = "items(summary,start,end)";
-            var response = await request.ExecuteAsync();
-            foreach(var item in response.Items)
-            {
-                Console.WriteLine($"Title: {item.Summary} start: {item.Start} end: {item.End}+\n");
+                var log = host.Services.GetRequiredService<ILogger<APIIntegration>>();
+                log.LogInformation("Host created");
+                await serviceProvider.GetService<IService>().Run();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadKey();
+            await host.RunAsync();
         }
-      
+
+        private static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args).ConfigureServices(
+                (serviceCollection) => ConfigureServices(serviceCollection));
+        }
+
+        private static void ConfigureServices(IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddLogging(config => config.AddDebug().AddConsole());
+            serviceCollection.AddScoped<IService, CRUDService>();
+        }
     }
 }
