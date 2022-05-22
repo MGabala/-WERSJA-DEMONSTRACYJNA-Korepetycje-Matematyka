@@ -34,3 +34,4 @@ namespace CALENDAR_INTEGRATION // Note: actual namespace depends on the project 
         }
     }
 }
+
