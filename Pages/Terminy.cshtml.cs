@@ -24,7 +24,7 @@ namespace Korepetycje_Matematyka.Pages
         public async Task OnGet()
         {
             Terminy = await repo.GetAllTerminyAsync();
-        }
+        } 
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await UserManager.GetUserAsync(User);
