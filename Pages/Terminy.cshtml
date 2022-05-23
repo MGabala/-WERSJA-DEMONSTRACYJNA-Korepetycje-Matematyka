@@ -24,17 +24,17 @@
          @foreach(var item in Model.Terminy)
         {
             <tr>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina1</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina2</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina3</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina4</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina5</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina6</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina7</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina8</button></center></td>
-            <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina9</button></center></td>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina1</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina2</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina3</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina4</button></center></td></form>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina5</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina6</button></center></td></form>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina7</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina8</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina9</button></center></td></form>
             </tr>
         }
         
