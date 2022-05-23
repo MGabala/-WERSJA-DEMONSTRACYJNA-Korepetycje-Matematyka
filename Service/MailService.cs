@@ -14,10 +14,6 @@ namespace Korepetycje_Matematyka.Service
         }
         public void Send()
         {
-            var maile = File.ReadAllLines(@"C:\mail.txt");
-            foreach (var _mail in maile)
-            {
-
                 using (MailMessage mail = new MailMessage())
                 using (SmtpClient smtpClient = new SmtpClient())
                 {
@@ -36,12 +32,11 @@ namespace Korepetycje_Matematyka.Service
 
                     mail.IsBodyHtml = true;
                     mail.From = new MailAddress(_mailFrom, "TYTUŁ ");
-                    mail.To.Add(_mail);
+                    mail.To.Add(_mailTo);
                     mail.Subject = "TEST";
                     smtpClient.Send(mail);
-                    Console.WriteLine("Mail sent: " + DateTime.Now);
                 }
             }
         }
     }
-}
+
