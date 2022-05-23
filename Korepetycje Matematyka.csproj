@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetOpenAuth.InfoCard.UI" Version="4.3.4.13329" />
     <PackageReference Include="Google.Apis.Calendar.v3" Version="1.57.0.2675" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.5" />

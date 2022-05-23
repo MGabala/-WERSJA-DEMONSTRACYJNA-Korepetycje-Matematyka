@@ -41,26 +41,3 @@ namespace Korepetycje_Matematyka.Pages
         }
     }
 }
-
-
-  
-//    public async Task<IActionResult> OnPostAsync()
-//    {
-//        if (ModelState.IsValid)
-//        {
-//            IdentityUser user =
-//                new IdentityUser { UserName = UserName, Email = Email };
-//            IdentityResult result =
-//                await UserManager.CreateAsync(user, Password);
-//            if (result.Succeeded)
-//            {
-//                return RedirectToPage("List");
-//            }
-//            foreach (IdentityError err in result.Errors)
-//            {
-//                ModelState.AddModelError("", err.Description);
-//            }
-//        }
-//        return Page();
-//    }
-//}

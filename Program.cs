@@ -1,6 +1,4 @@
-
 using Korepetycje_Matematyka.Models;
-using Korepetycje_Matematyka.Service;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 
@@ -20,7 +18,6 @@ builder.Services.Configure<IdentityOptions>(config => {
 });
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ITerminyRepository, TerminyRepository>();
-builder.Services.AddTransient<IMailService, MailService>();
 builder.Services.Configure<CookieAuthenticationOptions>(
        IdentityConstants.ApplicationScheme,
     opts => {
