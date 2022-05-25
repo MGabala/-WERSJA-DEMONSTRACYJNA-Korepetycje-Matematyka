@@ -7,26 +7,25 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-             <th><center>Dzień Tygodnia</center></th>
+           <th><center>Dzień Tygodnia</center></th>
            <th><center>Godzina </center></th>
-           <th><center>Godzina </center></th>  <th>
-               <center>Godzina </center></th>
-          <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th> 
+           <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>
            <th><center>Godzina </center></th>  
            <th><center>Godzina </center></th>
-            <th><center>Godzina </center></th>
-             <th><center>Godzina </center></th>
-              <th><center>Godzina </center></th>
-               <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>
+           <th><center>Godzina </center></th>
         </tr>
     </thead>
     <tbody>
          @foreach(var item in Model.Terminy)
         {
-   
                 <tr>
            <form method="post"> <td> <center><button class="btn btn-success" asp-route-name="" asp-route-value="@item.Dzień_Tygodnia">@item.Dzień_Tygodnia</button><br /></center></td></form>
-           <form method="post"><td> <center><button class="btn btn-success" asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina">@item.Godzina</button></center></td></form>
+           <form method="post"><td> <center><button  class="btn btn-success"  asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina">@item.Godzina</button></center></td></form>
            <form method="post"> <td> <center><button class="btn btn-success" asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina1">@item.Godzina1</button></center></td></form>
            <form method="post"> <td> <center><button class="btn btn-success" asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina2">@item.Godzina2</button></center></td></form>
            <form method="post"> <td> <center><button class="btn btn-success" asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina3">@item.Godzina3</button></center></td></form>
@@ -38,4 +37,5 @@
            <form method="post"> <td> <center><button class="btn btn-success" asp-route-name="@item.Dzień_Tygodnia" asp-route-value="@item.Godzina9">@item.Godzina9</button></center></td></form>
             </tr>
         }
-    </tbody></table>
+    </tbody>
+</table>
