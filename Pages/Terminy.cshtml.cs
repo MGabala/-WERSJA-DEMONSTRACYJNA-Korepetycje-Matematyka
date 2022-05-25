@@ -32,8 +32,6 @@ namespace Korepetycje_Matematyka.Pages
         } 
         public async Task<IActionResult> OnPostAsync(string name, string value)
         {
-
-           
             var user = await UserManager.GetUserAsync(User);
             using (MailMessage mail = new MailMessage())
             using (SmtpClient smtpClient = new SmtpClient())
