@@ -30,8 +30,9 @@ namespace Korepetycje_Matematyka.Pages
             Terminy = await repo.GetAllTerminyAsync();
             
         } 
-        public async Task<IActionResult> OnPostAsync(string name, string value)
+        public async Task<IActionResult> OnPostAsync(int id, string column, string day, string value)
         {
+            
             var user = await UserManager.GetUserAsync(User);
             using (MailMessage mail = new MailMessage())
             using (SmtpClient smtpClient = new SmtpClient())
@@ -40,13 +41,14 @@ namespace Korepetycje_Matematyka.Pages
                 smtpClient.Port = 587;
                 smtpClient.Credentials = new NetworkCredential(_mailFrom, Environment.GetEnvironmentVariable("HAS£O"));
                 smtpClient.EnableSsl = true;
-                mail.Body = $"U¿ytkownik: {user.UserName} o numerze: {user.PhoneNumber} zapisa³ siê na termin: {name} o godzinie {value} ";
+                mail.Body = $"U¿ytkownik: {user.UserName} o numerze: {user.PhoneNumber} zapisa³ siê na termin: {day} o godzinie {value} ";
                 mail.IsBodyHtml = false;
                 mail.From = new MailAddress(_mailFrom, "Zapis na korepetycje");
                 mail.To.Add(_mailTo);
-                mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber} na termin: {name} o godzinie {value} ";
+                mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber} na termin: {day} o godzinie {value}";
                 smtpClient.Send(mail);
             }
+
             return RedirectToPage("Potwierdzenie");
         }
     }
