@@ -42,9 +42,9 @@ namespace Korepetycje_Matematyka.Pages
                 smtpClient.EnableSsl = true;
                 mail.Body = $"U¿ytkownik: {user.UserName} o numerze: {user.PhoneNumber} zapisa³ siê na termin: {name} o godzinie {value} ";
                 mail.IsBodyHtml = false;
-                mail.From = new MailAddress(_mailFrom, "TYTU£ ");
+                mail.From = new MailAddress(_mailFrom, "Zapis na korepetycje");
                 mail.To.Add(_mailTo);
-                mail.Subject = "TEST";
+                mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber}, na: {name} o godzinie {value} ";
                 smtpClient.Send(mail);
             }
             return RedirectToPage("Potwierdzenie");
