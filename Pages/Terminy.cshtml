@@ -24,18 +24,20 @@
          @foreach(var item in Model.Terminy)
         {
             <tr>
-            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Dzień_Tygodnia</button><br /></center></td></form>
-           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina</button></center></td></form>
-           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina1</button></center></td></form>
-           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina2</button></center></td></form>
-           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina3</button></center></td></form>
-           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina4</button></center></td></form>
-            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina5</button></center></td></form>
-             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina6</button></center></td></form>
-            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina7</button></center></td></form>
-             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina8</button></center></td></form>
-             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success">@item.Godzina9</button></center></td></form>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" value="@item.Dzień_Tygodnia">@item.Dzień_Tygodnia</button><br /></center></td></form>
+           <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina">@item.Godzina</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina1">@item.Godzina1</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina2">@item.Godzina2</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina3">@item.Godzina3</button></center></td></form>
+           <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina4">@item.Godzina4</button></center></td></form>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina5">@item.Godzina5</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina6">@item.Godzina6</button></center></td></form>
+            <form method="post"> <td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina7">@item.Godzina7</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina8">@item.Godzina8</button></center></td></form>
+             <form method="post"><td> <center><button asp-page-handler="edit" class="btn btn-success" name="@item.Dzień_Tygodnia" value="@item.Godzina9">@item.Godzina9</button></center></td></form>
             </tr>
         }
         
     </tbody></table>
+    
+
