@@ -44,7 +44,7 @@ namespace Korepetycje_Matematyka.Pages
                 mail.IsBodyHtml = false;
                 mail.From = new MailAddress(_mailFrom, "Zapis na korepetycje");
                 mail.To.Add(_mailTo);
-                mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber}, na: {name} o godzinie {value} ";
+                mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber} na termin: {name} o godzinie {value} ";
                 smtpClient.Send(mail);
             }
             return RedirectToPage("Potwierdzenie");
