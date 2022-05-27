@@ -48,7 +48,8 @@ namespace Korepetycje_Matematyka.Pages
                 mail.Subject = $"Nowy termin zarezerwowany przez {user.PhoneNumber} na termin: {day} o godzinie {value}";
                 smtpClient.Send(mail);
             }
-
+           var query = $"UPDATE [TERMINY] set [{column}] = 'Niedostêpny' where id = {id}";
+       
             return RedirectToPage("Potwierdzenie");
         }
     }
