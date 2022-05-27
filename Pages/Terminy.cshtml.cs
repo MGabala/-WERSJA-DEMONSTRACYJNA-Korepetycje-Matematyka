@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.Sqlite;
 using System.Net;
 using System.Net.Mail;
 
@@ -11,6 +12,7 @@ namespace Korepetycje_Matematyka.Pages
         private ITerminyRepository repo;
         private readonly string _mailTo = string.Empty;
         private readonly string _mailFrom = string.Empty;
+        private readonly string _connectionString = string.Empty;
         public UserManager<IdentityUser> UserManager;
      
         public string DzieñTygodnia { get; set; }
@@ -23,7 +25,7 @@ namespace Korepetycje_Matematyka.Pages
             this.repo = repository;
             _mailTo = configuration["mailSettings:mailTo"];
             _mailFrom = configuration["mailSettings:mailFrom"];
-           
+            _connectionString = configuration["ConnectionStrings:AccountsDB"];
         }
         public async Task OnGet()
         {
@@ -49,8 +51,15 @@ namespace Korepetycje_Matematyka.Pages
                 smtpClient.Send(mail);
             }
            var query = $"UPDATE [TERMINY] set [{column}] = 'Niedostêpny' where id = {id}";
-       
-            return RedirectToPage("Potwierdzenie");
+            using (var con = new SqliteConnection(_connectionString))
+            using (var cmd = new SqliteCommand())
+            {
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+                return RedirectToPage("Potwierdzenie");
         }
     }
 }
